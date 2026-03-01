@@ -1,10 +1,17 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const SOURCE = path.join(process.env.HOME!, "Desktop/ma-deeds-analysis");
+const SOURCE = path.join(process.env.HOME || "/tmp", "Desktop/ma-deeds-analysis");
 const DATA_DIR = path.join(__dirname, "../src/data");
 const CONTENT_DIR = path.join(__dirname, "../src/content");
 const PUBLIC_DATA = path.join(__dirname, "../public/data");
+
+// Skip processing if source data is not available (e.g., on Vercel)
+if (!fs.existsSync(SOURCE)) {
+  console.log("Source data not found at", SOURCE);
+  console.log("Skipping data processing (using committed data files).");
+  process.exit(0);
+}
 
 function ensureDir(dir: string) {
   fs.mkdirSync(dir, { recursive: true });
