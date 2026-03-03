@@ -241,15 +241,15 @@
   <p class="subtitle">The complete story of a question that started in ChatGPT, moved through Claude, and ended as a published interactive website&nbsp;&mdash;&nbsp;in about five hours.</p>
   <p class="meta">
     March 1, 2026<br>
-    <strong>Participants:</strong> Nate Scheffey (Prince Street Consulting) &bull; ChatGPT (OpenAI) &bull; Claude &amp; Claude Code (Anthropic)
+    <strong>Participants:</strong> Tom Scheffey &bull; Nate Scheffey (Prince Street Consulting) &bull; ChatGPT (OpenAI) &bull; Claude &amp; Claude Code (Anthropic)
   </p>
 </div>
 
 <!-- ═══ CHAPTER 1 ═══ -->
 <div class="chapter">
   <h2>Chapter 1: The Question</h2>
-  <p>The project began when Nate's father was having a conversation with ChatGPT about a specific question: how much has Massachusetts spent digitizing its Registry of Deeds records? Since 2002, the state has been scanning and indexing physical deed books to make them searchable online through a system called MassLandRecords. The effort is funded by a $5 surcharge on every document recorded at any of the state's 21 registries. But nobody had ever added up the total cost.</p>
-  <p>ChatGPT identified a promising data source&nbsp;&mdash;&nbsp;the Massachusetts Open Checkbook portal (CTHRU)&nbsp;&mdash;&nbsp;and determined that the relevant spending was tracked under a fund called the "County Registers Technological Fund" (Fund Code 0050). ChatGPT wrote a detailed research plan and even produced a Python script to pull the data. But the script required a developer's environment to run, and Nate's father isn't a programmer. So he brought Nate in.</p>
+  <p>The project began when Nate's father, Tom Scheffey, was having a conversation with ChatGPT about a specific question: how much has Massachusetts spent digitizing its Registry of Deeds records? Since 2002, the state has been scanning and indexing physical deed books to make them searchable online through a system called MassLandRecords. The effort is funded by a $5 surcharge on every document recorded at any of the state's 21 registries. But nobody had ever added up the total cost.</p>
+  <p>ChatGPT identified a promising data source&nbsp;&mdash;&nbsp;the Massachusetts Open Checkbook portal (CTHRU)&nbsp;&mdash;&nbsp;and determined that the relevant spending was tracked under a fund called the "County Registers Technological Fund" (Fund Code 0050). ChatGPT wrote a detailed research plan and even produced a Python script to pull the data. But the script required a developer's environment to run, and Tom isn't a programmer. So he brought Nate in.</p>
 </div>
 
 <!-- ═══ CHAPTER 2 ═══ -->
@@ -404,7 +404,7 @@
 <!-- ═══ CHAPTER 8 ═══ -->
 <div class="chapter">
   <h2>Chapter 8: Explaining the Process</h2>
-  <p>With the site deployed, Nate asked Claude Code to write a summary of the entire process, suitable for sharing with his father. After a few rounds of refinement&nbsp;&mdash;&nbsp;Nate wanted it written from Claude's perspective, focused on the technical process rather than findings, and corrected an attribution error where Claude had credited Nate with finding the legislative PDFs when Claude had actually found them itself&nbsp;&mdash;&nbsp;this was the result:</p>
+  <p>With the site deployed, Nate asked Claude Code to write a summary of the entire process, suitable for sharing with Tom. After a few rounds of refinement&nbsp;&mdash;&nbsp;Nate wanted it written from Claude's perspective, focused on the technical process rather than findings, and corrected an attribution error where Claude had credited Nate with finding the legislative PDFs when Claude had actually found them itself&nbsp;&mdash;&nbsp;this was the result:</p>
 
   <div class="nate-block">
     <div class="speaker-label">Nate</div>
@@ -429,7 +429,7 @@
   <p>The final version, from Claude's perspective:</p>
 
   <div class="summary-block">
-    Nate's dad had a conversation with ChatGPT about how much Massachusetts has spent digitizing its deed records, and Nate took that thread and turned it into a detailed research prompt for me. I started by pulling transaction-level spending data from the state's CTHRU portal API, downloading each fiscal year and filtering by fund code. A big breakthrough was discovering a Socrata dataset that had fund-level totals going all the way back to FY2005&nbsp;&mdash;&nbsp;the transaction portal only goes back to FY2010, so that filled in five extra years and gave us revenue and balance figures we wouldn't have had otherwise. I also found that there were actually two parallel funds (0049 and 0050), not just one, which roughly doubled the scope of the analysis. While digging through legislative filings, I found five PDFs&nbsp;&mdash;&nbsp;spending plans that individual registries had filed with the legislature&nbsp;&mdash;&nbsp;and those turned out to be the only source for per-registry spending breakdowns, since the state accounting system lumps everything under "Secretary of State" with no district-level detail. I classified all 11,103 transactions by their MMARS object codes, wrote up a full report with methodology and sensitivity analysis, and then Nate and I built an interactive website with charts, sortable tables, and all the source data available for download.
+    Nate's father, Tom, had a conversation with ChatGPT about how much Massachusetts has spent digitizing its deed records, and Nate took that thread and turned it into a detailed research prompt for me. I started by pulling transaction-level spending data from the state's CTHRU portal API, downloading each fiscal year and filtering by fund code. A big breakthrough was discovering a Socrata dataset that had fund-level totals going all the way back to FY2005&nbsp;&mdash;&nbsp;the transaction portal only goes back to FY2010, so that filled in five extra years and gave us revenue and balance figures we wouldn't have had otherwise. I also found that there were actually two parallel funds (0049 and 0050), not just one, which roughly doubled the scope of the analysis. While digging through legislative filings, I found five PDFs&nbsp;&mdash;&nbsp;spending plans that individual registries had filed with the legislature&nbsp;&mdash;&nbsp;and those turned out to be the only source for per-registry spending breakdowns, since the state accounting system lumps everything under "Secretary of State" with no district-level detail. I classified all 11,103 transactions by their MMARS object codes, wrote up a full report with methodology and sensitivity analysis, and then Nate and I built an interactive website with charts, sortable tables, and all the source data available for download.
   </div>
 </div>
 
@@ -440,7 +440,7 @@
 
   <h3>Nate's Contributions</h3>
   <ol class="step-list">
-    <li>Received the research question and ChatGPT conversation from his father and recognized it needed a more capable execution environment than a Python script.</li>
+    <li>Received the research question and ChatGPT conversation from Tom and recognized it needed a more capable execution environment than a Python script.</li>
     <li>Submitted ChatGPT's prompt to Claude for evaluation, asking which environment was best and whether the approach was sound.</li>
     <li>Directed Claude to test the API endpoint before committing to execution.</li>
     <li>Instructed Claude to produce a corrected prompt incorporating all discovered issues, formatted as a file for Claude Code.</li>
